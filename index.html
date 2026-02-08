@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وقت الانطلاق | بيت الخبرة للمحاسبة</title>
+    <title>بيت الخبرة للمحاسبة | دقة، أمان، خبرة</title>
     
     <link rel="icon" type="image/png" href="1.png">
     
@@ -12,6 +12,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
         
+        :root {
+            --primary-blue: #0f172a; 
+            --growth-green: #16a34a; 
+        }
+
         body {
             font-family: 'Tajawal', sans-serif;
             scroll-behavior: smooth;
@@ -24,34 +29,51 @@
             background-position: center;
         }
 
-        /* نافذة المودال */
+        .service-card {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #16a34a;
+        }
+
         .modal {
             display: none;
             position: fixed;
             z-index: 1000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(8px);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(5px);
         }
 
         .modal-content {
             background-color: white;
-            margin: 15% auto;
+            margin: 10% auto;
             padding: 2rem;
             border-radius: 1.5rem;
             width: 90%;
-            max-width: 500px;
+            max-width: 600px;
             position: relative;
-            animation: fadeIn 0.3s ease-in-out;
+            animation: slideDown 0.4s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        .service-card { transition: all 0.3s ease; }
-        .service-card:hover { transform: translateY(-10px); }
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #e2e8f0;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -63,167 +85,174 @@
             </button>
             <div id="modalIcon" class="text-4xl text-green-600 mb-4"></div>
             <h3 id="modalTitle" class="text-2xl font-black text-blue-900 mb-4"></h3>
-            <div id="modalBody" class="text-slate-700 leading-loose space-y-3 font-medium"></div>
+            <div id="modalBody" class="text-slate-700 leading-loose space-y-3 font-medium">
+                </div>
         </div>
     </div>
 
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50">
-        <div class="max-w-7xl mx-auto px-4 md:px-6 py-2">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center gap-2 md:gap-3">
-                    <img src="1.png" alt="شعار" class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-slate-200">
-                    <div class="flex flex-col">
-                        <span class="text-[10px] md:text-xs font-bold text-green-600 leading-none mb-1">وقت الانطلاق</span>
-                        <span class="text-sm md:text-lg font-black text-blue-900 leading-none">بيت الخبرة المحاسبية</span>
-                    </div>
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="1.png" alt="شعار" class="logo-img">
+                <div class="flex flex-col text-right">
+                    <span class="text-sm font-bold text-green-600 leading-none mb-1">وقت الانطلاق</span>
+                    <span class="text-lg font-black text-blue-900 leading-none">بيت الخبرة المحاسبية</span>
                 </div>
+            </div>
+            
+            <div class="hidden lg:flex gap-8 font-bold text-slate-600">
+                <a href="#home" class="hover:text-blue-900 transition">الرئيسية</a>
+                <a href="#services" class="hover:text-blue-900 transition">الخدمات</a>
+                <a href="#sectors" class="hover:text-blue-900 transition">مجالات العمل</a>
+            </div>
 
-                <div class="hidden lg:flex gap-6 font-bold text-slate-600 text-sm">
-                    <a href="#home" class="hover:text-blue-900 transition">الرئيسية</a>
-                    <a href="#services" class="hover:text-blue-900 transition">الخدمات</a>
-                    <a href="#sectors" class="hover:text-blue-900 transition">مجالات العمل</a>
-                </div>
-
-                <div class="flex items-center gap-2">
-                    <a href="mailto:adaudit81@gmail.com" class="text-blue-900 hover:text-blue-700 text-xl p-2" title="إرسال إيميل">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                    <a href="https://wa.me/966544809053" class="text-green-600 hover:text-green-700 text-2xl p-2" title="واتساب">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                    <a href="tel:0544809053" class="hidden sm:block bg-blue-900 text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-800 transition">اتصل بنا</a>
-                </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:adaudit81@gmail.com" class="text-blue-900 text-xl hover:text-blue-700"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://wa.me/966544809053" class="text-green-600 text-2xl hover:text-green-700"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:0544809053" class="hidden md:block bg-blue-900 text-white px-6 py-2 rounded-lg font-bold hover:bg-slate-800 transition text-sm">اتصل بنا</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero-section min-h-screen flex items-center hero-gradient text-white px-6 pt-24 pb-12">
+    <section id="home" class="hero-section min-h-screen flex items-center hero-gradient text-white px-6 py-20">
         <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-3xl md:text-6xl font-black mb-6 leading-tight">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
                 نحن نعتني بأرقامك لتتفرغ أنت لنمو أعمالك
             </h1>
-            <p class="text-base md:text-xl mb-10 text-slate-300 font-medium">حلول محاسبية دقيقة، استشارات ضريبية متخصصة، وأمان مالي مطلق لشركتك.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/966544809053" class="bg-green-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-green-700 transition flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> استشارة مجانية
+            <div class="text-lg md:text-xl mb-10 text-slate-300 space-y-2 font-medium">
+                <p>حلول محاسبية دقيقة، استشارات ضريبية متخصصة، وأمان مالي مطلق لشركتك.</p>
+                <p>إعداد وتحليل الحسابات الداخلية والفحص الضريبي وفق الأنظمة المعتمدة.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://wa.me/966544809053" class="bg-green-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-green-700 transition flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> احجز استشارة مجانية
                 </a>
                 <a href="#services" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/30">عرض الخدمات</a>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-20 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
+    <section id="services" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="mb-16">
                 <h2 class="text-3xl font-black text-blue-900 mb-4">خدماتنا المهنية</h2>
-                <div class="h-1.5 w-16 bg-green-500 mx-auto rounded-full"></div>
+                <p class="text-slate-500">اضغط على أي بند لعرض التفاصيل</p>
+                <div class="h-1 w-20 bg-green-500 mx-auto mt-4"></div>
             </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div onclick="openModal('vat')" class="service-card p-6 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm cursor-pointer border-b-4 border-b-transparent hover:border-b-green-500">
-                    <i class="fa-solid fa-file-invoice-dollar text-4xl text-green-600 mb-4"></i>
-                    <h3 class="text-lg font-bold text-blue-900 mb-2">ضريبة القيمة المضافة</h3>
-                    <p class="text-slate-600 text-sm">التسجيل، الإقرارات، والدعم للفحص الضريبي.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div onclick="openModal('vat')" class="service-card p-8 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm flex flex-col items-center">
+                    <i class="fa-solid fa-file-invoice-dollar text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 text-blue-900">خدمات ضريبة القيمة المضافة</h3>
+                    <p class="text-slate-600 text-sm">التسجيل، الإقرارات، والدعم الإجرائي للفحص الضريبي.</p>
                 </div>
-                <div onclick="openModal('refund')" class="service-card p-6 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm cursor-pointer border-b-4 border-b-transparent hover:border-b-green-500">
-                    <i class="fa-solid fa-hand-holding-dollar text-4xl text-green-600 mb-4"></i>
-                    <h3 class="text-lg font-bold text-blue-900 mb-2">الاسترداد الضريبي</h3>
-                    <p class="text-slate-600 text-sm">تجهيز ومتابعة طلبات الاسترداد للمؤهلين.</p>
+
+                <div onclick="openModal('refund')" class="service-card p-8 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm flex flex-col items-center">
+                    <i class="fa-solid fa-hand-holding-dollar text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 text-blue-900">خدمات الاسترداد الضريبي</h3>
+                    <p class="text-slate-600 text-sm">تجهيز طلبات الاسترداد للمؤهلين ومتابعة الموافقة عليها.</p>
                 </div>
-                <div onclick="openModal('zakat')" class="service-card p-6 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm cursor-pointer border-b-4 border-b-transparent hover:border-b-green-500">
-                    <i class="fa-solid fa-scale-balanced text-4xl text-green-600 mb-4"></i>
-                    <h3 class="text-lg font-bold text-blue-900 mb-2">الإقرارات الزكوية</h3>
-                    <p class="text-slate-600 text-sm">خدمات الشركات والمؤسسات بحسابات منتظمة.</p>
+
+                <div onclick="openModal('zakat')" class="service-card p-8 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm flex flex-col items-center">
+                    <i class="fa-solid fa-scale-balanced text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 text-blue-900">خدمات الاقرارات الزكوية</h3>
+                    <p class="text-slate-600 text-sm">تقديم الإقرارات للمؤسسات والشركات الصغيرة بحسابات منتظمة.</p>
                 </div>
-                <div onclick="openModal('accounting')" class="service-card p-6 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm cursor-pointer border-b-4 border-b-transparent hover:border-b-green-500">
-                    <i class="fa-solid fa-book-bookmark text-4xl text-green-600 mb-4"></i>
-                    <h3 class="text-lg font-bold text-blue-900 mb-2">التنظيم المحاسبي</h3>
-                    <p class="text-slate-600 text-sm">مسك الدفاتر والتقارير المالية عبر أنظمة ERP.</p>
+
+                <div onclick="openModal('accounting')" class="service-card p-8 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm flex flex-col items-center">
+                    <i class="fa-solid fa-book-bookmark text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 text-blue-900">إعداد الحسابات والتنظيم المالى</h3>
+                    <p class="text-slate-600 text-sm">مسك الدفاتر، التقارير الشهرية، والربط مع المحاسب القانوني.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sectors" class="py-16 px-6 bg-slate-100">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-2xl font-black text-blue-900 mb-10">نحن نخدم مختلف القطاعات</h2>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="bg-white px-5 py-2 rounded-lg shadow-sm font-bold text-slate-700 text-sm">المقاولات</span>
-                <span class="bg-white px-5 py-2 rounded-lg shadow-sm font-bold text-slate-700 text-sm">التطوير العقاري</span>
-                <span class="bg-white px-5 py-2 rounded-lg shadow-sm font-bold text-slate-700 text-sm">الفنادق</span>
-                <span class="bg-white px-5 py-2 rounded-lg shadow-sm font-bold text-slate-700 text-sm">المطاعم</span>
-                <span class="bg-white px-5 py-2 rounded-lg shadow-sm font-bold text-slate-700 text-sm">الجمعيات الأهلية</span>
-                <span class="bg-white px-5 py-2 rounded-lg shadow-sm font-bold text-slate-700 text-sm">المصانع</span>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-white border-t border-slate-200 pt-12 pb-6 px-6">
+    <section id="sectors" class="py-20 px-6 bg-slate-100">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-right">
-                <div class="flex items-center justify-center md:justify-start gap-3">
-                    <img src="1.png" alt="شعار" class="w-12 h-12 rounded-full shadow-sm">
-                    <div class="flex flex-col">
-                        <span class="text-xs font-bold text-green-600">وقت الانطلاق</span>
+            <h2 class="text-3xl font-black text-center text-blue-900 mb-12">مجالات العمل التي نخدمها</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 text-center">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">شركات المقاولات</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">التطوير العقاري</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">الفنادق والمنتجعات</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">المطاعم والفرنشايز</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">الجمعيات الأهلية</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">المصانع والتصنيع</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">المشاريع التجارية</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-200 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-right">
+            <div>
+                <div class="flex items-center gap-3 justify-center md:justify-start">
+                    <img src="1.png" alt="شعار" class="w-10 h-10 rounded-full">
+                    <div class="flex flex-col text-right">
+                        <span class="text-xs font-bold text-green-600 leading-none">وقت الانطلاق</span>
                         <span class="text-xl font-black text-blue-900">بيت الخبرة للمحاسبة</span>
                     </div>
                 </div>
-
-                <div class="space-y-3">
-                    <div class="flex items-center justify-center md:justify-start gap-3 text-slate-700">
-                        <i class="fa-solid fa-phone text-blue-900"></i>
-                        <span class="font-bold">0544809053</span>
-                    </div>
-                    <div class="flex items-center justify-center md:justify-start gap-3 text-slate-700">
-                        <i class="fa-solid fa-envelope text-blue-900"></i>
-                        <span class="font-bold break-all">adaudit81@gmail.com</span>
-                    </div>
-                </div>
-
-                <div class="flex justify-center md:justify-end gap-4">
-                    <a href="https://wa.me/966544809053" class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-full hover:bg-green-600 hover:text-white transition">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                    </a>
-                    <a href="mailto:adaudit81@gmail.com" class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-900 rounded-full hover:bg-blue-900 hover:text-white transition">
-                        <i class="fa-solid fa-envelope text-xl"></i>
-                    </a>
+                <p class="text-slate-500 mt-2 font-medium">خبرة 20 عاماً في خدمة قطاع الأعمال.</p>
+            </div>
+            
+            <div class="space-y-2">
+                <p class="text-slate-900 font-bold flex items-center justify-center md:justify-start gap-2">
+                    <i class="fa-solid fa-phone text-blue-900"></i> تواصل مباشر: 0544809053
+                </p>
+                <p class="text-slate-900 font-bold flex items-center justify-center md:justify-start gap-2 text-sm">
+                    <i class="fa-solid fa-envelope text-blue-900"></i> adaudit81@gmail.com
+                </p>
+                <div class="flex gap-4 justify-center md:justify-start pt-2">
+                    <a href="https://wa.me/966544809053" class="text-green-600 text-2xl"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:adaudit81@gmail.com" class="text-blue-900 text-xl"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="mt-12 text-center text-slate-400 text-sm border-t border-slate-100 pt-6">
-                &copy; 2026 جميع الحقوق محفوظة لبيت الخبرة.
-            </div>
+            
+            <p class="text-slate-400 text-sm">&copy; 2026 جميع الحقوق محفوظة لبيت الخبرة.</p>
         </div>
     </footer>
 
     <script>
         const serviceData = {
             vat: {
-                title: "ضريبة القيمة المضافة",
+                title: "خدمات ضريبة القيمة المضافة",
                 icon: '<i class="fa-solid fa-file-invoice-dollar"></i>',
-                content: "تسجيل المنشآت، تقديم الإقرارات الدورية، الدعم في الفحص الضريبي، وتجهيز ملفات ميزان المراجعة والتحليلات الربع سنوية."
+                content: `
+                    <ul class="list-disc list-inside">
+                        <li><b>التسجيل في الضريبة:</b> مساعدة المنشآت في فتح حساباتهم لدى هيئة الزكاة والضريبة والجمارك.</li>
+                        <li><b>إدخال بيانات الإقرارات:</b> رفع البيانات المالية (الفواتير) على البوابة الإلكترونية نيابة عن العميل.</li>
+                        <li><b>الدعم الإجرائي للفحص:</b> مساعدة العميل في تجميع المستندات اللازمة ورفع الطلبات عبر البوابة.</li>
+                        <li><b>تجهيز ملفات الفحص:</b> ترتيب الفواتير والسجلات كل ربع سنة ميزان مراجعه وتحليلات.</li>
+                    </ul>`
             },
             refund: {
-                title: "الاسترداد الضريبي",
+                title: "خدمات الاسترداد الضريبي",
                 icon: '<i class="fa-solid fa-hand-holding-dollar"></i>',
-                content: "نحن نقوم بدراسة أهليتك لاسترداد الضريبة وتجهيز كافة المستندات ورفعها عبر بوابة الهيئة ومتابعتها حتى استرداد المبلغ."
+                content: "تقديم إقرارات الاسترداد الضريبي للمؤهلين مع تجهيز كل ما يلزم لتقديم طلب الاسترداد والموافقة عليه من قبل الهيئة."
             },
             zakat: {
-                title: "الإقرارات الزكوية",
+                title: "خدمات الاقرارات الزكوية",
                 icon: '<i class="fa-solid fa-scale-balanced"></i>',
-                content: "تقديم الإقرارات الزكوية للشركات والمؤسسات الصغيرة بحسابات منتظمة وقوائم مالية دقيقة معدة بواسطة برامج ERP عالمية."
+                content: "تقديم الإقرارات الزكوية للشركات الصغيرة والمؤسسات التي تتبع حسابات منتظمة، بإشراف محاسبين ذوي خبرة واستخدام أفضل برامج ERP الأمريكية لضمان دقة فحص الزكاة."
             },
             accounting: {
-                title: "التنظيم المالي",
+                title: "إعداد الحسابات والتنظيم المالى",
                 icon: '<i class="fa-solid fa-book-bookmark"></i>',
-                content: "مسك الدفاتر، إعداد التقارير الشهرية (أرباح وخسائر، تدفقات نقدية)، وتجهيز القوائم المالية للمحاسب القانوني لاعتمادها."
+                content: `
+                    <ul class="list-disc list-inside">
+                        <li><b>مسك الدفاتر المحاسبية:</b> تسجيل القيود اليومية بانتظام.</li>
+                        <li><b>التقارير المالية:</b> إصدار تقارير شهرية (قائمة أرباح وخسائر، ميزانية عمومية، تدفقات نقدية) عبر برامج ERP الأمريكية.</li>
+                        <li><b>المتابعة القانونية:</b> تجهيز القوائم للمحاسب القانوني للتدقيق والرفع في وزارة التجارة.</li>
+                    </ul>`
             }
         };
 
-        function openModal(key) {
-            const item = serviceData[key];
-            document.getElementById('modalTitle').innerText = item.title;
-            document.getElementById('modalIcon').innerHTML = item.icon;
-            document.getElementById('modalBody').innerText = item.content;
+        function openModal(serviceKey) {
+            const data = serviceData[serviceKey];
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalIcon').innerHTML = data.icon;
+            document.getElementById('modalBody').innerHTML = data.content;
             document.getElementById('serviceModal').style.display = 'block';
         }
 
@@ -231,8 +260,11 @@
             document.getElementById('serviceModal').style.display = 'none';
         }
 
-        window.onclick = function(e) {
-            if(e.target == document.getElementById('serviceModal')) closeModal();
+        window.onclick = function(event) {
+            let modal = document.getElementById('serviceModal');
+            if (event.target == modal) {
+                closeModal();
+            }
         }
     </script>
 </body>
