@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بيت الخبرة للمحاسبة | دقة، أمان، خبرة</title>
+    
+    <link rel="icon" type="image/png" href="1.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+        
+        :root {
+            --primary-blue: #0f172a; 
+            --growth-green: #16a34a; 
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                        url('https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: 0.3s;
+        }
+
+        /* تنسيق إضافي للشعار ليظهر بشكل احترافي */
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="1.png" alt="شعار بيت الخبرة" class="logo-img">
+                <span class="text-xl font-black text-blue-900">بيت الخبرة</span>
+            </div>
+            <div class="hidden md:flex gap-8 font-bold text-slate-600">
+                <a href="#home" class="hover:text-blue-900 transition">الرئيسية</a>
+                <a href="#services" class="hover:text-blue-900 transition">الخدمات</a>
+                <a href="#blog" class="hover:text-blue-900 transition">المدونة</a>
+                <a href="#portal" class="hover:text-blue-900 text-green-600 transition">بوابة العميل</a>
+            </div>
+            <a href="#contact" class="bg-blue-900 text-white px-6 py-2 rounded-lg font-bold hover:bg-slate-800 transition">اتصل بنا</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section h-screen flex items-center hero-gradient text-white px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                نحن نعتني بأرقامك لتتفرغ أنت لنمو أعمالك
+            </h1>
+            <p class="text-xl mb-10 text-slate-300">
+                حلول محاسبية دقيقة، استشارات ضريبية متخصصة، وأمان مالي مطلق لشركتك.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact" class="bg-green-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-green-700 transition">احجز استشارة مجانية</a>
+                <a href="#services" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/30">عرض الخدمات</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-blue-900 mb-4">خدماتنا المهنية</h2>
+                <div class="h-1 w-20 bg-green-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-card p-8 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm">
+                    <i class="fa-solid fa-file-invoice-dollar text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">المحاسبة الضريبية</h3>
+                    <p class="text-slate-600">تقديم الإقرارات وضريبة القيمة المضافة بكل دقة.</p>
+                </div>
+                <div class="service-card p-8 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm">
+                    <i class="fa-solid fa-magnifying-glass-chart text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">المراجعة والتدقيق</h3>
+                    <p class="text-slate-600">فحص وتدقيق القوائم المالية لضمان الشفافية.</p>
+                </div>
+                <div class="service-card p-8 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm">
+                    <i class="fa-solid fa-building text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">تأسيس الشركات</h3>
+                    <p class="text-slate-600">استشارات مالية وقانونية متكاملة للشركات الناشئة.</p>
+                </div>
+                <div class="service-card p-8 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm">
+                    <i class="fa-solid fa-book text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">مسك الدفاتر</h3>
+                    <p class="text-slate-600">تسجيل وتنظيم العمليات المالية اليومية باحترافية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto bg-slate-800 p-10 rounded-3xl shadow-2xl">
+            <h2 class="text-2xl font-black mb-8 text-center">حاسبة ضريبة القيمة المضافة (15%)</h2>
+            <div class="grid gap-6">
+                <div>
+                    <label class="block mb-2 font-bold">المبلغ الأساسي (ر.س)</label>
+                    <input type="number" id="amount" class="w-full p-4 rounded-xl bg-slate-700 border-none text-white text-2xl focus:ring-2 focus:ring-green-500 outline-none" placeholder="0.00" oninput="calculateTax()">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-700 p-6 rounded-xl">
+                        <span class="block text-slate-400 text-sm mb-1">قيمة الضريبة</span>
+                        <span id="taxValue" class="text-2xl font-black text-green-400">0.00</span>
+                    </div>
+                    <div class="bg-slate-700 p-6 rounded-xl">
+                        <span class="block text-slate-400 text-sm mb-1">الإجمالي الشامل</span>
+                        <span id="totalValue" class="text-2xl font-black text-white">0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portal" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-xl mx-auto text-center border p-10 rounded-3xl bg-white shadow-sm">
+            <i class="fa-solid fa-user-lock text-5xl text-blue-900 mb-6"></i>
+            <h2 class="text-3xl font-black mb-4">بوابة العميل الآمنة</h2>
+            <p class="text-slate-600 mb-8 font-medium">ارفع فواتيرك، وحمل تقاريرك المالية، وتواصل معنا مباشرة وبأمان تام.</p>
+            <button class="bg-blue-900 text-white w-full py-4 rounded-xl font-black hover:bg-slate-800 transition shadow-lg shadow-blue-200">تسجيل الدخول</button>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-200 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-right">
+            <div>
+                <div class="flex items-center gap-3 justify-center md:justify-start">
+                    <img src="1.png" alt="شعار" class="w-10 h-10 rounded-full">
+                    <span class="text-2xl font-black text-blue-900">بيت الخبرة للمحاسبة</span>
+                </div>
+                <p class="text-slate-500 mt-2 font-medium">خبرة 20 عاماً في خدمة قطاع الأعمال.</p>
+            </div>
+            <div class="flex gap-6 text-2xl text-slate-400">
+                <a href="#" class="hover:text-blue-900 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-blue-400 transition"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="hover:text-green-600 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="text-slate-400 text-sm">&copy; 2026 جميع الحقوق محفوظة لبيت الخبرة.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateTax() {
+            const amountInput = document.getElementById('amount');
+            const amount = parseFloat(amountInput.value) || 0;
+            const tax = amount * 0.15;
+            const total = amount + tax;
+            
+            document.getElementById('taxValue').innerText = tax.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('totalValue').innerText = total.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+    </script>
+</body>
+</html>
