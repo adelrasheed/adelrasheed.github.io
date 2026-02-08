@@ -69,8 +69,8 @@
         }
 
         .logo-img {
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid #e2e8f0;
@@ -92,10 +92,13 @@
     </div>
 
     <nav class="fixed top-0 w-full bg-white shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="1.png" alt="شعار بيت الخبرة" class="logo-img">
-                <span class="text-xl font-black text-blue-900">بيت الخبرة</span>
+                <img src="1.png" alt="شعار" class="logo-img">
+                <div class="flex flex-col text-right">
+                    <span class="text-sm font-bold text-green-600 leading-none mb-1">وقت الانطلاق</span>
+                    <span class="text-lg font-black text-blue-900 leading-none">بيت الخبرة المحاسبية</span>
+                </div>
             </div>
             <div class="hidden md:flex gap-8 font-bold text-slate-600">
                 <a href="#home" class="hover:text-blue-900 transition">الرئيسية</a>
@@ -126,7 +129,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-black text-blue-900 mb-4">خدماتنا المهنية</h2>
-                <p class="text-slate-500">اضغط على الخدمة للتفاصيل</p>
+                <p class="text-slate-500">اضغط على أي بند لعرض التفاصيل</p>
                 <div class="h-1 w-20 bg-green-500 mx-auto mt-4"></div>
             </div>
             
@@ -162,25 +165,25 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-black text-center text-blue-900 mb-12">مجالات العمل التي نخدمها</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 text-center">
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900">شركات المقاولات</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900">التطوير العقاري</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900">الفنادق والمنتجعات</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900">المطاعم والفرنشايز</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900">الجمعيات الأهلية</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900">المصانع والتصنيع</div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900">المشاريع التجارية</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">شركات المقاولات</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">التطوير العقاري</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">الفنادق والمنتجعات</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">المطاعم والفرنشايز</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">الجمعيات الأهلية</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">المصانع والتصنيع</div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 font-bold text-blue-900 text-sm">المشاريع التجارية</div>
             </div>
         </div>
     </section>
 
     <footer class="bg-white border-t border-slate-200 py-12 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-right">
-            <div>
-                <div class="flex items-center gap-3 justify-center md:justify-start">
-                    <img src="1.png" alt="شعار" class="w-10 h-10 rounded-full">
-                    <span class="text-2xl font-black text-blue-900">بيت الخبرة للمحاسبة</span>
+            <div class="flex items-center gap-3">
+                <img src="1.png" alt="شعار" class="w-10 h-10 rounded-full">
+                <div class="flex flex-col">
+                    <span class="text-xs font-bold text-green-600 leading-none">وقت الانطلاق</span>
+                    <span class="text-xl font-black text-blue-900">بيت الخبرة للمحاسبة</span>
                 </div>
-                <p class="text-slate-500 mt-2 font-medium">خبرة 20 عاماً في خدمة قطاع الأعمال.</p>
             </div>
             <div>
                 <p class="text-slate-900 font-bold mb-1">تواصل مباشر: 0544809053</p>
@@ -195,31 +198,31 @@
                 title: "خدمات ضريبة القيمة المضافة",
                 icon: '<i class="fa-solid fa-file-invoice-dollar"></i>',
                 content: `
-                    <ul class="list-disc list-inside">
-                        <li><b>التسجيل في الضريبة:</b> مساعدة المنشآت في فتح حساباتهم لدى هيئة الزكاة والضريبة والجمارك.</li>
-                        <li><b>إدخال بيانات الإقرارات:</b> رفع البيانات المالية (الفواتير) على البوابة الإلكترونية نيابة عن العميل.</li>
-                        <li><b>الدعم الإجرائي للفحص:</b> مساعدة العميل في تجميع المستندات اللازمة ورفع الطلبات عبر البوابة.</li>
-                        <li><b>تجهيز ملفات الفحص:</b> ترتيب الفواتير والسجلات كل ربع سنة ميزان مراجعه وتحليلات.</li>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><b>التسجيل:</b> مساعدة المنشآت في فتح حساباتهم لدى هيئة الزكاة والضريبة والجمارك.</li>
+                        <li><b>إدخال البيانات:</b> رفع البيانات المالية للفواتير على البوابة الإلكترونية نيابة عن العميل.</li>
+                        <li><b>الدعم للفحص:</b> مساعدة العميل في تجميع المستندات اللازمة ورفع الطلبات.</li>
+                        <li><b>تجهيز الملفات:</b> ترتيب الفواتير والسجلات للفحص مع ميزان مراجعة ربع سنوي.</li>
                     </ul>`
             },
             refund: {
                 title: "خدمات الاسترداد الضريبي",
                 icon: '<i class="fa-solid fa-hand-holding-dollar"></i>',
-                content: "تقديم إقرارات الاسترداد الضريبي للمؤهلين مع تجهيز كل ما يلزم لتقديم طلب الاسترداد والموافقة عليه من قبل الهيئة."
+                content: "تقديم إقرارات الاسترداد الضريبي للمؤهلين مع تجهيز كل ما يلزم لتقديم طلب الاسترداد والموافقة عليه من الهيئة."
             },
             zakat: {
                 title: "خدمات الاقرارات الزكوية",
                 icon: '<i class="fa-solid fa-scale-balanced"></i>',
-                content: "تقديم الإقرارات الزكوية للشركات الصغيرة والمؤسسات التي تتبع حسابات منتظمة، بإشراف محاسبين ذوي خبرة واستخدام أفضل برامج ERP الأمريكية لضمان دقة فحص الزكاة."
+                content: "تقديم الإقرارات الزكوية للشركات الصغيرة والمؤسسات بحسابات منتظمة، بإشراف محاسبين ذوي خبرة وباستخدام أفضل برامج ERP الأمريكية."
             },
             accounting: {
                 title: "إعداد الحسابات والتنظيم المالى",
                 icon: '<i class="fa-solid fa-book-bookmark"></i>',
                 content: `
-                    <ul class="list-disc list-inside">
-                        <li><b>مسك الدفاتر المحاسبية:</b> تسجيل القيود اليومية بانتظام.</li>
-                        <li><b>التقارير المالية:</b> إصدار تقارير شهرية (قائمة أرباح وخسائر، ميزانية عمومية، تدفقات نقدية) عبر برامج ERP الأمريكية.</li>
-                        <li><b>المتابعة القانونية:</b> تجهيز القوائم للمحاسب القانوني للتدقيق والرفع في وزارة التجارة.</li>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><b>مسك الدفاتر:</b> تسجيل القيود اليومية بانتظام.</li>
+                        <li><b>التقارير المالية:</b> تقارير شهرية (ميزانية، أرباح وخسائر، تدفقات نقدية) عبر أنظمة ERP.</li>
+                        <li><b>المتابعة:</b> مراجعة القوائم مع المحاسب القانوني والرفع في وزارة التجارة.</li>
                     </ul>`
             }
         };
@@ -236,7 +239,6 @@
             document.getElementById('serviceModal').style.display = 'none';
         }
 
-        // إغلاق النافذة عند الضغط خارجها
         window.onclick = function(event) {
             let modal = document.getElementById('serviceModal');
             if (event.target == modal) {
