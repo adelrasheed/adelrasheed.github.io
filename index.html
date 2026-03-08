@@ -49,15 +49,16 @@
             height: 100%;
             background-color: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(5px);
+            overflow-y: auto; /* يسمح بالتمرير للباقات الطويلة */
         }
 
         .modal-content {
             background-color: white;
-            margin: 10% auto;
-            padding: 2rem;
+            margin: 5% auto;
+            padding: 2.5rem;
             border-radius: 1.5rem;
             width: 90%;
-            max-width: 600px;
+            max-width: 800px; /* عرض أكبر للباقات */
             position: relative;
             animation: slideDown 0.4s ease-out;
         }
@@ -73,6 +74,20 @@
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid #e2e8f0;
+        }
+
+        /* تنسيق إضافي للباقات داخل المودال */
+        .package-box {
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: #f8fafc;
+        }
+        .price-tag {
+            color: #16a34a;
+            font-weight: 900;
+            font-size: 1.25rem;
         }
     </style>
 </head>
@@ -114,24 +129,24 @@
         </div>
     </nav>
 
-    <section id="home" class="hero-section min-h-screen flex items-center hero-gradient text-white px-6 py-20">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                نحن نعتني بأرقامك لتتفرغ أنت لنمو أعمالك
-            </h1>
-            <div class="text-lg md:text-xl mb-10 text-slate-300 space-y-2 font-medium">
-                <p>حلول محاسبية دقيقة، استشارات ضريبية متخصصة، وأمان مالي مطلق لشركتك.</p>
-                <p>إعداد وتحليل الحسابات الداخلية والفحص الضريبي وفق الأنظمة المعتمدة.</p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/966544809053" class="bg-green-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-green-700 transition flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp"></i> احجز استشارة مجانية
-                </a>
-                <a href="#services" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/30">عرض الخدمات</a>
-            </div>
+<section id="home" class="hero-section min-h-screen flex items-center hero-gradient text-white px-6 py-20">
+    <div class="max-w-5xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-black mb-10 leading-relaxed md:leading-loose">
+            نحن نعتني بأرقامك لتتفرغ أنت 
+            <br class="hidden md:block"> لنمو أعمالك
+        </h1>
+        <div class="text-lg md:text-xl mb-12 text-slate-300 space-y-4 font-medium">
+            <p>حلول محاسبية دقيقة، استشارات ضريبية متخصصة، وأمان مالي مطلق لشركتك.</p>
+            <p>إعداد وتحليل الحسابات الداخلية والفحص الضريبي وفق الأنظمة المعتمدة.</p>
         </div>
-    </section>
-
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://wa.me/966544809053" class="bg-green-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-green-700 transition flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i> احجز استشارة مجانية
+            </a>
+            <a href="#services" class="bg-white/10 backdrop-blur px-8 py-3 rounded-full font-bold text-lg hover:bg-white/20 transition border border-white/30">عرض الخدمات</a>
+        </div>
+    </div>
+</section>
     <section id="services" class="py-24 px-6 bg-white">
         <div class="max-w-7xl mx-auto text-center">
             <div class="mb-16">
@@ -141,6 +156,14 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div onclick="openModal('packages')" class="service-card p-8 rounded-2xl border-2 border-green-500 bg-green-50/30 text-center shadow-md flex flex-col items-center">
+                    <i class="fa-solid fa-box-open text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-xl font-black mb-4 text-blue-900">باقات الخدمات المقدمه وتكلفتها</h3>
+                    <p class="text-slate-600 text-sm">اكتشف باقاتنا المرنة (التدخل السريع، الأساس، النمو، والشريك) بأسعار تنافسية.</p>
+                    <span class="mt-4 text-green-600 font-bold text-xs bg-green-100 px-3 py-1 rounded-full">جديد ومميز</span>
+                </div>
+
                 <div onclick="openModal('un-audited')" class="service-card p-8 rounded-2xl border border-slate-100 bg-slate-50 text-center shadow-sm flex flex-col items-center">
                     <i class="fa-solid fa-file-signature text-4xl text-green-600 mb-6"></i>
                     <h3 class="text-xl font-bold mb-4 text-blue-900">عمل القوائم الماليه الغير مدققه قانونيا</h3>
@@ -221,6 +244,76 @@
 
     <script>
         const serviceData = {
+            'packages': {
+                title: "باقات الخدمات المقدمة وتكلفتها",
+                icon: '<i class="fa-solid fa-box-archive"></i>',
+                content: `
+                    <div class="space-y-6">
+                        <p class="font-bold text-green-600 border-b pb-2 text-lg">📦 باقات الخدمات المحاسبية</p>
+                        
+                        <div class="package-box border-2 border-green-200">
+                            <h4 class="font-black text-blue-900 mb-2">⚡ خدمات "التدخل السريع" (لمرة واحدة)</h4>
+                            <p class="text-sm mb-4">صممنا هذه الباقة خصيصاً لتلبية احتياجاتك العاجلة وإغلاق ملفاتك المالية والضريبية بدقة.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-white p-3 rounded border-r-4 border-green-500">
+                                    <p class="font-bold">1. إعداد وتقديم الإقرار الضريبي (الربع سنوي)</p>
+                                    <p class="text-sm text-slate-600">مراجعة الفواتير، تجهيز الإقرار، الرفع على ZATCA، وإعداد "ملف الفحص".</p>
+                                    <p class="price-tag">المبلغ: 1,000 ريال سعودي</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border-r-4 border-green-500">
+                                    <p class="font-bold">2. إدارة فحص ضريبة القيمة المضافة</p>
+                                    <p class="text-sm text-slate-600">تجهيز المستندات، الرد الاحترافي على الهيئة، وتسوية الملف بالكامل.</p>
+                                    <p class="price-tag">المبلغ: 3,000 ريال سعودي</p>
+                                </div>
+                                <div class="bg-white p-3 rounded border-r-4 border-green-500">
+                                    <p class="font-bold">3. إعداد القوائم المالية والإغلاق السنوي</p>
+                                    <p class="text-sm text-slate-600">تجهيز القوائم الشاملة والرفع على برنامج (قوائم) بوزارة التجارة.</p>
+                                    <p class="price-tag">المبلغ: 4,500 ريال سعودي</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-xs italic text-blue-700 font-bold italic underline">"إذا قررت لاحقاً التعاقد في باقة شهرية، نخصم جزءاً من الخدمة الفورية من اشتراكك الأول"</p>
+                        </div>
+
+                        <p class="font-bold text-green-600 border-b pb-2 text-lg">📅 الباقات الشهرية المستمرة</p>
+
+                        <div class="grid gap-4">
+                            <div class="package-box">
+                                <h4 class="font-black text-blue-900">1. باقة "الأساس"</h4>
+                                <p class="text-xs text-slate-500 mb-2">(للمؤسسات الفردية والشركات الناشئة)</p>
+                                <ul class="text-sm list-disc list-inside mb-2">
+                                    <li>تأسيس دليل الحسابات على نظام ERP</li>
+                                    <li>تسجيل العمليات اليومية (فواتير، مصروفات)</li>
+                                    <li>تسوية الحسابات البنكية</li>
+                                </ul>
+                                <p class="price-tag">2,000 ريال / شهرياً</p>
+                            </div>
+
+                            <div class="package-box bg-green-50 border-green-200">
+                                <h4 class="font-black text-blue-900">2. باقة "النمو"</h4>
+                                <p class="text-xs text-slate-500 mb-2">(للشركات الصغيرة والمتوسطة)</p>
+                                <ul class="text-sm list-disc list-inside mb-2">
+                                    <li>كل خدمات "الأساس" + إقرارات ZATCA</li>
+                                    <li>متابعة العملاء والموردين + تقارير دورية</li>
+                                    <li>أعمال الفحص الضريبي كاملة</li>
+                                </ul>
+                                <p class="price-tag">3,000 ريال / شهرياً</p>
+                            </div>
+
+                            <div class="package-box">
+                                <h4 class="font-black text-blue-900">3. باقة "الشريك"</h4>
+                                <p class="text-xs text-slate-500 mb-2">(للتوجيه المالي الشامل)</p>
+                                <ul class="text-sm list-disc list-inside mb-2">
+                                    <li>مسك دفاتر شامل واستشارات مستمرة</li>
+                                    <li>الفحص الضريبي الكامل والاقرارات الزكوية</li>
+                                    <li>إعداد القوائم غير المدققة ورفعها للتجارة</li>
+                                </ul>
+                                <p class="price-tag">4,000 ريال / شهرياً</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
             'un-audited': {
                 title: "عمل القوائم الماليه الغير مدققه قانونيا",
                 icon: '<i class="fa-solid fa-file-signature"></i>',
